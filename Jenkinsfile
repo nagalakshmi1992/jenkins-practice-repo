@@ -5,12 +5,12 @@ pipeline {
     stage("build") {
       when {
         expression {
-          BRANCH_NAME == 'dev' && CODE_CHANGES == 'true'
+          BRANCH_NAME == 'dev' 
         }
         
       }
       steps {
-        echo "welcome to build stage"
+        echo "welcome to build stage from dev branch"
       }
       
     }
