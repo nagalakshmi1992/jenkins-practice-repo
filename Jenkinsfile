@@ -7,7 +7,7 @@ pipeline {
     stage("build") {
       steps {
         echo "welcome to build stage"
-        echo " version is $(NEW_VERSION)"
+        echo " version is ${NEW_VERSION}"
       }
       
     }
