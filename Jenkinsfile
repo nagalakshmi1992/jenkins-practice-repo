@@ -25,9 +25,11 @@ pipeline {
     }
     stage("build") {
       steps {
+        script {
         //echo "welcome to build stage"
         //echo " version is ${NEW_VERSION}"
         gv.buildApp()
+        }
         
       }
       
@@ -39,16 +41,21 @@ pipeline {
         }
       }
       steps {
+        script {
+         
         gv.testApp()
+        }
       }
       
     }
     stage("deploy") {
       
       steps {
+        script {
         //echo "welcome to deploy stage"
         echo "deploying version ${params.VERSION}"
         gv.deployApp()
+        }
         
       }
       
